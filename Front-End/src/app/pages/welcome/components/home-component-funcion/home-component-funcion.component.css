@@ -1,0 +1,50 @@
+h3 {
+    text-align: center;
+}
+
+.funciones {
+    display: grid;
+    text-align: center;
+
+}
+
+
+.funcion {
+    padding: 10px;
+}
+
+
+h4 {
+    margin: 5px;
+}
+
+.title {
+    width: 139px;
+    height: 139px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--primary);
+    ;
+    font-size: 80px;
+    margin: auto;
+}
+
+
+.title span {
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.funcion p {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 1025px) {
+    .funciones {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+    }
+}

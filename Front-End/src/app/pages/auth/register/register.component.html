@@ -1,0 +1,45 @@
+<body>
+  <div class="container">
+    <div class="title">
+      Register Form
+    </div>
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <input type="text" id="inputname" formControlName="name" required>
+        <label for="inputname">Nombre</label>
+        <div *ngIf="formRegister.get('name')?.invalid && formRegister.get('name')?.touched" class="error-message">
+          Nombre es requerido.
+        </div>
+      </div>
+      <div class="field">
+        <input type="text" id="inputlastname" formControlName="lastname" required>
+        <label for="inputlastname">Apellidos</label>
+        <div *ngIf="formRegister.get('lastname')?.invalid && formRegister.get('lastname')?.touched" class="error-message">
+          Apellidos son requeridos.
+        </div>
+      </div>
+      <div class="field">
+        <input type="email" id="inputemail" formControlName="email" required>
+        <label for="inputemail">Email Address</label>
+        <div *ngIf="formRegister.get('email')?.invalid && formRegister.get('email')?.touched" class="error-message">
+          Email es requerido y debe ser válido.
+        </div>
+      </div>
+      <div class="field">
+        <input type="password" id="inputpassword" formControlName="password" required>
+        <label for="inputpassword">Password</label>
+        <div *ngIf="formRegister.get('password')?.invalid && formRegister.get('password')?.touched" class="error-message">
+          Password es requerido y debe tener al menos 3 caracteres.
+        </div>
+      </div>
+      <div class="form-footer">
+        <div class="signup-link">
+          ¿Ya estás registrado? <a [routerLink]="['/login']">Log in</a>
+        </div>
+        <div class="field">
+          <input [disabled]="formRegister.invalid" [ngClass]="{'blue-button': !formRegister.invalid, 'gray-button': formRegister.invalid}" type="submit" value="Registrate">
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

@@ -1,0 +1,45 @@
+h4 {
+    text-align: center;
+}
+
+.accordion {
+    max-width: 800px;
+    margin: auto;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 600px;
+}
+
+.accordion-item .accordion-header span {
+    margin-right: 10px;
+    transition: all 1s ease;
+}
+
+.accordion-item.active .accordion-header span {
+    rotate: 180deg;
+
+    color: rgba(0, 153, 114, 0.6);
+}
+
+.accordion-item.active .accordion-header {
+    color: rgba(0, 153, 114, 0.6);
+    border-bottom: solid 1px rgba(0, 153, 114, 0.6);
+
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    cursor: pointer;
+    border-bottom: solid 1px black;
+
+
+}

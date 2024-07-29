@@ -1,0 +1,37 @@
+@PORT = 3000
+@HOST = http://localhost:{{PORT}}
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0NTc2Mjg4NH0.m5f5C4hsDFo5xgnIS6umTzXz3IAYjtwa6G0PL5U7kO4
+
+### CREAR UN NUEVO GASTO
+POST {{HOST}}/api/gastos
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "groupId": 1,
+  "amount": 100.50,
+  "description": "Compra de materiales"
+}
+
+### OBTENER TODOS LOS GASTOS
+GET {{HOST}}/api/gastos
+Authorization: {{TOKEN}}
+
+### OBTENER UN GASTO POR ID
+GET {{HOST}}/api/gastos/1
+Authorization: {{TOKEN}}
+
+### ACTUALIZAR UN GASTO
+PUT {{HOST}}/api/gastos/1
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "groupId": 1,
+  "amount": 150.75,
+  "description": "Compra de materiales actualizada"
+}
+
+### ELIMINAR UN GASTO
+DELETE {{HOST}}/api/gastos/1
+Authorization: {{TOKEN}}

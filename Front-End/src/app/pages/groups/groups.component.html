@@ -1,0 +1,46 @@
+<div class="grupos">
+    <div class="div_separador">
+        <div class="grupos_description">
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+        </div>
+        <div class="participantes">
+            <div *ngFor="let participant of participantsUser" class="participante">
+                <p class="participantes_name"> <span>{{participant.name}} {{participant.lastname}}</span></p>
+                <p>Total pagado: {{participant.total_amount}}</p>
+                <p>Debe: {{participant.total_a_pagar}}</p>
+            </div>
+        </div>
+        <div class="grupos_description">
+            <div>
+                <h2>total Gastado</h2>
+                <p>{{total_amount}}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="div_separador">
+        <h2>Gastos</h2>
+        <div class="gastos">
+            <div *ngFor="let participant of participantsUser" class="gasto">
+                <p class="participantes_name"> <span>{{participant.name}} {{participant.lastname}}</span></p>
+                <div *ngFor="let gasto of participant.gastos_user" class="pagos">
+                    <p class="participantes_gasto">{{gasto.description}} - {{gasto.amount}}</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn-new-group" (click)="abrirPopup()">Añadir Gasto</button>
+    </div>
+    <div class="div_separador">
+        <h2>Pagos</h2>
+        <div *ngFor="let balance of balances" class="gastos">
+            <p>{{balance.to.name}} debe {{balance.amount}} a {{balance.from.name}}</p>
+        </div>
+    </div>
+
+    <div class="popup-overlay" *ngIf="mostrarPopup">
+        <div class="popup-content">
+            <app-gestion-gastos (cerrar)="cerrarPopup()"></app-gestion-gastos>
+        </div>
+    </div>
+</div>

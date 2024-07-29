@@ -1,0 +1,35 @@
+@PORT = 3000
+@HOST = http://localhost:{{PORT}}
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0NTc2Mjg4NH0.m5f5C4hsDFo5xgnIS6umTzXz3IAYjtwa6G0PL5U7kO4
+
+### Crear un grupo
+POST {{HOST}}/api/grupos
+Authorization: {{TOKEN}}
+Content-Type: application/json
+
+{
+  "title": "Viaje a la Paris",
+  "description": "Gastos del viaje a Paris"
+}
+
+### Obtener todos los grupos
+GET {{HOST}}/api/grupos
+Authorization: {{TOKEN}}
+
+### Obtener un grupo por ID
+GET {{HOST}}/api/grupos/1
+Authorization: {{TOKEN}}
+
+### Actualizar un grupo
+PUT {{HOST}}/api/grupos/9
+Authorization: {{TOKEN}}
+Content-Type: application/json
+
+{
+  "title": "Viaje a la montaña",
+  "description": "Gastos del viaje a la montaña"
+}
+
+### Eliminar un grupo
+DELETE {{HOST}}/api/grupos/2
+Authorization: {{TOKEN}}

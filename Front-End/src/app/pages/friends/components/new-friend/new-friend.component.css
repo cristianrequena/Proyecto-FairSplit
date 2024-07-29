@@ -1,0 +1,140 @@
+.group-section {
+    padding: 30px;
+    border-radius: 30px;
+    color: #123553;
+    background-color: white;
+}
+
+.header-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    margin: 0;
+}
+
+.form-label {
+    min-width: 400px;
+    font-size: large;
+}
+
+.group-form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.form-input {
+    border: none;
+    border-radius: 5px;
+    min-height: 30px;
+    font-size: medium;
+    background-color: #d6e6e6;
+}
+
+.btn-close-popup {
+    position: relative;
+    top: -20px;
+    right: -10px;
+    color: #123553;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: 800;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-close-popup:hover {
+    transform: scale(1.4);
+}
+
+.form-submit {
+    cursor: pointer;
+    height: 1.5rem;
+    width: 100px;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #d6e6e6;
+    font-size: medium;
+    font-weight: 600;
+    border: none;
+    color: #123553;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.form-submit:hover {
+    background-color: #123553;
+    color: #d6e6e6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px #123553;
+}
+ 
+
+.form-submit:hover {
+    background-color: #123553;
+    color: #d6e6e6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px #123553;
+  }
+  
+.form-submit.disabled-button {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+ }
+  
+.form-submit.disabled-button:hover {
+    background-color: #cccccc;
+    color: #666666;
+    transform: none;
+    box-shadow: none;
+  }
+  
+
+.error{
+    color: var(--danger);
+    font-size: small;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 460px) {
+    .group-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 340px;
+        padding: 1rem;
+        border-radius: 30px;
+        gap: 1rem;
+    }
+
+    .btn-close-popup {
+        position: absolute;
+        left: 220px;
+        top: -10px;
+    }
+}
+
+@media (max-width: 390px) {
+    .group-section {
+        width: 280px;
+    }
+
+    .btn-close-popup {
+        left: 170px;
+    }
+}
+
+.dropdown {
+    max-height: 200px;
+    overflow-y: auto;
+}

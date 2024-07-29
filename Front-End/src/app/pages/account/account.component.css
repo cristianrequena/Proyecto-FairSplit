@@ -1,0 +1,72 @@
+.account-page {
+    text-align: center;
+    padding: 20px;
+    grid-auto-columns: 100%;
+    min-height: 800px;
+}
+
+.foto-perfil, .photo-container {
+    margin: 20px auto;
+    position: relative; /* Cambiado de 'static' para permitir ajustes responsivos */
+    width: 100%; /* Ajusta este valor según sea necesario */
+    max-width: 300px; /* Asegura que la imagen no sea demasiado grande */
+}
+
+.name {
+    font-weight: bold;
+}
+
+.user-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.my-element {
+    position: absolute;
+}
+
+.password-text {
+    margin-right: 10px;
+    color: var(--secondary);
+}
+
+p {
+    color: var(--primary);
+}
+
+label {
+    color: var(--primary);
+}
+
+@media (max-width: 1200px) {
+    /* Estilos para pantallas grandes (por ejemplo, televisores) */
+}
+
+@media (max-width: 992px) {
+    /* Estilos para pantallas de escritorio */
+}
+
+@media (max-width: 768px) {
+    /* Estilos para tabletas */
+}
+
+@media (max-width: 576px) {
+    /* Estilos para teléfonos móviles */
+    .account-page {
+        padding: 1em;
+        min-height: auto; /* Ajusta la altura mínima para dispositivos móviles */
+    }
+
+    .foto-perfil, .photo-container {
+       
+        margin: 20px auto;
+        top: auto; /* Elimina la posición superior fija */
+        left: auto; /* Elimina la posición izquierda fija */
+    }
+
+    .user-details-container {
+        top: auto; /* Elimina la posición superior fija */
+    }
+}

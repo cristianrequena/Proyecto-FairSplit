@@ -1,0 +1,25 @@
+<section class="section-primary">
+    <div class="friends-header">
+        <h1 class="friends-title">Mis amigos</h1>
+        <button class="btn-add-friend" (click)="abrirPopup()">Nuevo amigo</button>
+    </div>
+    <ul class="friends-list">
+        <li class="friend-item" *ngFor="let friend of friends">
+            <div class="friend-info">
+                <div class="friend-name">{{ friend.name }} {{ friend.lastname }}</div>
+                <div class="friend-email">{{ friend.email }}</div>
+            </div>
+            <div class="friend-actions">
+                <div class="friend-details">Grupos en común: {{ friend.total_grupos_comunes }}</div>
+                <button class="btn-remove-friend" (click)="deleteFriend(friend)">
+                    <img src="../../../assets/icons/eliminar.png" alt="eliminar">
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="popup-overlay" *ngIf="mostrarPopup">
+        <div class="popup-content">
+            <app-new-friend (cerrar)="cerrarPopup()"></app-new-friend>
+        </div>
+    </div>
+</section>

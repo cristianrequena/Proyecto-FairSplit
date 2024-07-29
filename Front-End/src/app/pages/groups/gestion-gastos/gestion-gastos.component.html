@@ -1,0 +1,66 @@
+<section class="expense-section">
+  <form [formGroup]="formExpense" (ngSubmit)="onSubmit()" class="expense-form">
+    <div class="header-section">
+      <h2 class="expense-title">Nuevo Gasto</h2>
+      <button type="button" class="close-button" (click)="cerrarPopup()">X</button>
+    </div>
+    
+    <div class="payer-section">
+      <label class="payer-label">¿Quién ha pagado?</label>
+      <div class="payer-input-group">
+        <select id="user" formControlName="user" class="payer-input">
+          <option class="select-option" *ngFor="let member of allMembers" [value]="member._id">{{ member.fullName }}</option>
+        </select>
+        <div class="amount-input-group">
+          <input type="number" id="expense" formControlName="expense" class="amount-input" placeholder="0">
+          <span class="currency-symbol">€</span>
+        </div>
+      </div>
+        <div *ngIf="checkControl('user', 'required')" class="error text-danger">Campo requerido</div>
+    </div>
+
+    <div class="recipient-section">
+      <div class="recipient-header">
+        <label class="recipient-label">¿Para quién?</label>
+        <div class="division-container">
+          <label for="division" class="division-label">División</label>
+          <select name="division" id="division" class="division-select" (change)="onSelectChange($event)">
+            <option value="1">simple</option>
+            <option value="2">por %</option>
+          </select>
+        </div>
+      </div>
+
+      <div *ngIf="parent === '1'">
+        <mat-selection-list formControlName="integrants">
+          <mat-list-option *ngFor="let member of allMembers" [value]="member._id">
+            <div class="member-container">{{ member.fullName }}</div>
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+
+      <div *ngIf="parent === '2'">
+        <mat-selection-list formControlName="integrants">
+          <mat-list-option *ngFor="let member of allMembers" [value]="member._id">
+            <div class="member-container">
+              <div class="member-name">{{ member.fullName }}</div>
+              <div class="member-input-container">
+                <input class="member-input" type="number" [id]="member._id" min="0" max="100" [value]="0" (input)="validateInput($event)">
+                <span class="member-percentage">%</span>
+              </div>
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </div>
+
+    <div class="subject-section">
+      <label class="subject-label">Asunto</label>
+      <input id="description" formControlName="description" class="subject-input" type="text" placeholder="Descripción del gasto">
+      <div *ngIf="checkControl('description', 'required')" class="error text-danger">Campo requerido</div>
+      <div *ngIf="checkControl('description', 'minlength')" class="error text-danger">Mínimo 2 caracteres</div>
+    </div>
+
+    <input type="submit" value="Guardar" class="form-submit" [ngClass]="{'disabled-button': !formExpense.valid}" [disabled]="!formExpense.valid">
+  </form>
+</section>

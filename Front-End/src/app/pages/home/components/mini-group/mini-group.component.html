@@ -1,0 +1,35 @@
+<div class="mini-group" [ngStyle]="{'background-color': miniGroupColor}">
+    <div class="header-group">
+        <div class="date">{{ miGroup.creation_date | date: 'dd/MM/yyyy' }}</div>
+        <button class="btn-settings" (click)="onDelete()">
+            <img class="settings" src="../../../../../assets/icons/eliminar.png" alt="">
+        </button>
+    </div>
+    <button class="btn-group-name" [routerLink]="['/grupo', miGroup.group_id]">
+        <span>{{miGroup.title}}</span>
+    </button>
+    <div class="accounts">
+        <div class="total-accounts">
+            <div>Total:</div>
+            <div>{{miGroup.total_amount}}€</div>
+        </div>
+        @if (parent >= (miGroup.balance_difference ?? 0)) {
+            <div class="total-user">
+                <div class="difference-accounts negative">Te deben:</div>
+                <div>{{getAbsoluteBalanceDifference()}}€</div>
+            </div>
+        } @else {
+            <div class="total-user">
+                <div class="difference-accounts positive">A pagar:</div>
+                <div>{{getAbsoluteBalanceDifference()}}€</div>
+            </div>
+        }
+    </div>
+    <div class="group-user">
+        <img class="icon-user-1" [src]="miGroup.creator_url_photo ? miGroup.creator_url_photo : '../../../../../assets/icons/account-blue.png'" alt="Imagen creador del grupo">
+        <div class="user-actions">
+            <span class="total-users-group">+{{(miGroup.num_participants ?? 0) - 1}}</span>
+            <!-- <button class="btn-add-user-group" [ngStyle]="{'background-color': addUserButtonColor}">+</button> -->
+        </div>
+    </div>
+    

@@ -1,0 +1,35 @@
+<!-- account.component.html -->
+<div class="account-page">
+  <h2>Información de mi perfil</h2>
+
+  <hr>
+
+  <div class="photo">
+    <div class="photo-container">
+      <img class="foto-perfil"
+        [src]="photo_url ?? 'https://i.pravatar.cc/500?u=mariadelcarmen.herreravillanueva@peticiones.online'"
+        alt="Foto de perfil:">
+      <input type="file" accept="image/*" (change)="cambiarFoto($event)">
+    </div>
+  </div>
+  <div class="name">
+    <div class="user-details-container">
+      <p>Nombre: <input [(ngModel)]="name"></p>
+      <p>Apellidos: <input [(ngModel)]="lastname"></p>
+      <p>Email: <input [(ngModel)]="email" readonly></p>
+      <p>
+        <button (click)="cambiarpassword = !cambiarpassword">Cambiar contraseña</button>
+      </p>
+      <div *ngIf="cambiarpassword">
+        <label>Nueva contraseña:
+          <input [type]="newPasswordVisible ? 'text' : 'password'" [(ngModel)]="newPassword">
+          <button (click)="newPasswordVisible = !newPasswordVisible">
+            <i *ngIf="newPasswordVisible" class="fa-solid fa-eye"></i>
+            <i *ngIf="!newPasswordVisible" class="fa-solid fa-eye-slash"></i>
+          </button>
+        </label>
+      </div>
+      <button (click)="guardarCambios()">Guardar cambios</button>
+    </div>
+  </div>
+</div>

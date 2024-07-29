@@ -1,0 +1,66 @@
+@PORT = 3000
+@HOST = http://localhost:{{PORT}}
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0NTc2Mjg4NH0.m5f5C4hsDFo5xgnIS6umTzXz3IAYjtwa6G0PL5U7kO4
+
+//Registro de un usuario y asignación a un grupo.
+//Obtener todos los usuarios.
+//Obtener un usuario por ID.
+//Actualizar un usuario.
+//Eliminar un usuario.
+//Asignar un usuario a un grupo.
+//Eliminar un usuario de un grupo.
+
+## Registro de un nuevo usuario (Independiente)
+POST {{HOST}}/api/usuarios/register
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "name": "Usuario con Grupo",
+  "lastname": "Apellido con Grupo",
+  "email": "grupo@example.com",
+  "photo": "url_de_la_foto",
+  "password": "nuevapassword",
+  "groupId": 1,
+  "paymentPercentage": 20.00
+}
+
+### OBTENER TODOS LOS USUARIOS
+GET {{HOST}}/api/usuarios
+Authorization: {{TOKEN}}
+
+### OBTENER UN USUARIO POR ID
+GET {{HOST}}/api/usuarios/1
+Authorization: {{TOKEN}}
+
+### ACTUALIZAR UN USUARIO
+PUT {{HOST}}/api/usuarios/1
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "name": "Usuario Actualizado",
+  "lastname": "Apellido Actualizado",
+  "email": "actualizado@example.com",
+  "photo": "url_actualizada_de_la_foto",
+  "password": "nuevapasswordactualizada"
+}
+
+### ELIMINAR UN USUARIO
+DELETE {{HOST}}/api/usuarios/1
+Authorization: {{TOKEN}}
+
+### ASIGNAR UN USUARIO A UN GRUPO
+POST {{HOST}}/api/usuarios/1/grupo
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "groupId": 1,
+  "paymentPercentage": 20.00
+}
+
+### ELIMINAR UN USUARIO DE UN GRUPO
+DELETE {{HOST}}/api/usuarios/1/grupo/1
+Authorization: {{TOKEN}}
+

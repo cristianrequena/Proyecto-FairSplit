@@ -1,0 +1,243 @@
+.group-section {
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 30px;
+    width: fit-content;
+    gap: 20px;
+    color: #123553;
+    background-color: white;
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-close-popup {
+    position: relative;
+    top: -10px;
+    right: -10px;
+    color: #123553;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 800;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-close-popup:hover {
+    transform: scale(1.4);
+}
+
+h2 {
+    margin: 0;
+}
+
+.group-form {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-label {
+    font-size: large;
+}
+
+.form-input {
+    border: none;
+    border-bottom: none;
+    font-size: medium;
+    padding: 5px 0;
+    box-shadow: none;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-textarea {
+    resize: none;
+    border-radius: 5px;
+    height: 80px;
+    border: none;
+    background-color: #d6e6e6;
+    padding: 0.5rem;
+    font-size: medium;
+    outline: none;
+    overflow-y: hidden;
+}
+
+.btn-add {
+    cursor: pointer;
+    background-color: #d6e6e6;
+    
+    font-weight: 600;
+    color: #123553;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-add,
+.btn-remove {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: large;
+}
+
+.btn-remove {
+    color: #a51c1c;
+}
+
+.btn-add:hover,
+.btn-remove:hover {
+    transform: scale(1.2);
+}
+
+.dropdown {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #d6e6e6;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.members-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    font-size: medium;
+}
+
+.participants-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.participants-header {
+    display: flex;
+    font-size: medium;
+    font-weight: 600;
+}
+
+ul {
+    margin-top: 0;
+    padding: 0;
+}
+
+li {
+    font-size: small;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-submit {
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #d6e6e6;
+    font-size: medium;
+    font-weight: 600;
+    border: none;
+    color: #123553;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-submit:hover {
+    background-color: #123553;
+    color: #d6e6e6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px #123553;
+  }
+  
+  .form-submit.disabled-button {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .form-submit.disabled-button:hover {
+    background-color: #cccccc;
+    color: #666666;
+    transform: none;
+    box-shadow: none;
+  }
+  
+
+.error{
+    color: var(--danger);
+    font-size: small;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .group-section {
+        width: 100%;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .group-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-submit {
+        order: 1;
+    }
+
+    .integrants-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto;
+    }
+}
+
+@media (max-width: 460px) {
+    .group-section {
+        width: 360px;
+    }
+}
+
+@media (max-width: 390px) {
+    .group-section {
+        width: 280px;
+    }
+
+    .form-label {
+        font-size: medium;
+    }
+
+    .form-input {
+        font-size: small;
+    }
+
+    .btn-add {
+        top: 30px;
+    }
+}

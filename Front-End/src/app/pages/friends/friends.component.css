@@ -1,0 +1,120 @@
+.section-primary {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0;
+}
+
+.friends-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.btn-add-friend {
+    cursor: pointer;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+    background-color: var(--primary);
+    border: 2px solid var(--tertiary);
+}
+
+.btn-add-friend:hover {
+    background-color: var(--tertiary);
+    color: #d6e6e6;
+    transform: scale(1.05);
+}
+
+.btn-add-friend:active {
+    box-shadow: 0 4px 16px var(--tertiary);
+}
+
+.friend-item {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+    border-bottom: 1px solid var(--tertiary);
+    padding: 10px;
+    color: var(--secondary);
+}
+
+.friends-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: auto;
+    gap: 10px;
+    padding: 30px;
+    padding-bottom: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.266);
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+.friend-info,
+.friend-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.friend-name {
+    color: var(--primary);
+}
+
+.friend-details {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.btn-remove-friend {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-remove-friend:hover {
+    transform: scale(1.10);
+}
+
+.btn-remove-friend img {
+    width: 30px;
+    height: 30px;
+}
+
+.popup-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    background: rgba(0, 0, 0, 0.700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+@media (max-width: 992px) {
+    .friend-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 540px) {
+    .friend-item {
+        grid-template-columns: 1fr;
+    }
+
+    .friend-actions {
+        display: flex;
+        justify-content: space-between;
+    }
+}

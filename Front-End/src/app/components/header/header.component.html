@@ -1,0 +1,30 @@
+<header>
+    <div class="menu-flotante" (click)="addClassOpen()">
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav">
+        <div class="menu-flotante-close" (click)="removeClassOpen()">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-img">
+            <a [routerLink]="['/welcome']">
+                <img src="../../../assets/img/logo.svg" alt="img" class="nav-li_a img">
+            </a>
+        </div>
+        @if (token.length > 0) {
+        <div class="nav-li">
+            <a class="underline nav-li_a" [routerLink]="['/friends']">Amigos</a>
+            <a class="underline nav-li_a" [routerLink]="['/about']">About</a>
+            <a class="underline nav-li_a" [routerLink]="['/account']">Perfil</a>
+            <a class="underline nav-li_a" [routerLink]="['/welcome']" (click)="logout()">Salir</a>
+        </div>
+        }@else{
+        <div class="nav-li">
+            <a class="underline nav-li_a" [routerLink]="['/login']">Iniciar Sesión</a>
+            <a class="underline nav-li_a" [routerLink]="['/register']">Registrarse</a>
+        </div>
+        }
+    </div>
+</header>

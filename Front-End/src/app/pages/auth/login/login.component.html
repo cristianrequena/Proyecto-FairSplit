@@ -1,0 +1,34 @@
+<body>
+  <div class="container">
+    <div class="title">
+      Login Form
+    </div>
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <input type="email" id="inputemailLogin" formControlName="email" required>
+        <label for="inputemailLogin">Email Address</label>
+      </div>
+      <div class="field">
+        <input type="password" id="inputpasswordLogin" formControlName="password" required>
+        <label for="inputpasswordLogin">Password</label>
+      </div>
+      <div class="content">
+        <div class="checkbox">
+          <input type="checkbox" id="remember-me">
+          <label for="remember-me">Recuerdame</label>
+        </div>
+        <div class="pass-link">
+          <a [routerLink]="['/recover']">¿Contraseña olvidada?</a>
+        </div>
+      </div>
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div class="field">
+        <input [disabled]="formLogin.invalid" type="submit" value="Login">
+      </div>
+      <div class="signup-link">
+        ¿No eres miembro? <a [routerLink]="['/register']">Registrate</a>
+      </div>
+    </form>
+  </div>
+</body>

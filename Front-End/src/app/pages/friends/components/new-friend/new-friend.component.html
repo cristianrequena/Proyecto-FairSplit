@@ -1,0 +1,15 @@
+<section class="group-section">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="group-form">
+        <div class="header-form">
+            <h2>Añade Amigo</h2>
+            <button type="button" class="btn-close-popup" (click)="cerrarPopup()">X</button>
+        </div>
+        <div class="form-group">
+            <label for="friend" class="form-label"></label>
+            <input id="friend" formControlName="friend" class="form-input" placeholder="Introduce el email de tu amigo" />
+        </div>
+        @if(checkControl('friend', 'pattern')){
+            <p class="error text-danger">Introduce un Email válido</p>}
+        <input type="submit" value="Añadir" class="form-submit" [ngClass]="     {'disabled-button': !formGroup.valid}" [disabled]="!formGroup.valid">
+    </form>
+</section>

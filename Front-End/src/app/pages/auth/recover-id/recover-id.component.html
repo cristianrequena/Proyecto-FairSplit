@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="title">
+    Restablecer Contraseña
+  </div>
+  <form [formGroup]="formRecoverPass" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <input type="password" id="newpassword" formControlName="newpassword" required>
+      <label for="newpassword">Nueva contraseña</label>
+      <div class="error" *ngIf="formRecoverPass.get('newpassword')?.invalid && (formRecoverPass.get('newpassword')?.dirty || formRecoverPass.get('newpassword')?.touched)">
+        <div *ngIf="formRecoverPass.get('newpassword')?.hasError('required')">La contraseña es requerida.</div>
+        <div *ngIf="formRecoverPass.get('newpassword')?.hasError('minlength')">La contraseña debe tener más de 4 caracteres.</div>
+      </div>
+    </div>
+    <div class="form-footer">
+      <div class="field">
+        <input type="submit" value="Restablecer" [disabled]="formRecoverPass.invalid">
+      </div>
+    </div>
+  </form>
+</div>
+

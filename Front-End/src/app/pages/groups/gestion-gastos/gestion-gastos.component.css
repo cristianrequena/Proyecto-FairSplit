@@ -1,0 +1,274 @@
+/* Quitar flechas en navegadores webkit (Chrome, Safari, Opera) */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Quitar flechas en Firefox */
+input[type=number] {
+    -moz-appearance: textfield; 
+    appearance: textfield; 
+}
+
+input[type=number]:focus {
+    outline: none;
+}
+
+.expense-section {
+    padding: 30px;
+    border-radius: 30px;
+    color: #123553;
+    background-color: white;
+}
+
+.expense-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expense-title {
+    margin: 0;
+}
+
+.close-button {
+    position: relative;
+    color: #123553;
+    cursor: pointer;
+    display: flex;
+    align-self: flex-start;
+    font-size: large;
+    font-weight: 800;
+    border: none;
+    background-color: transparent;
+}
+
+.close-button:hover {
+    transform: scale(1.1);
+}
+
+.payer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.payer-label {
+    font-weight: 600;
+}
+
+.payer-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.payer-input {
+    cursor: pointer;
+    font-size: large;
+    border: none;
+}
+
+.payer-input:focus {
+    outline: none;
+}
+
+.select-option {
+    background-color: var(--quaternary);
+    color: #333;
+    padding: 10px;
+}
+
+.amount-input-group {
+    display: flex;
+    align-items: center;
+}
+
+.amount-input {
+    font-size: xx-large;
+    max-width: 200px;
+    border: none;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.currency-symbol {
+    font-size: x-large;
+}
+
+.validators-expense{
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipient-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recipient-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipient-label {
+    font-weight: 600;
+    font-size: x-large;
+}
+
+.division-container {
+    display: flex;
+    gap: 5px;
+    font-size: medium;
+    align-items: center;
+}
+
+.division-select {
+    border: none;
+}
+
+.mat-list-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.member-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.member-name {
+    flex: 1;
+    text-align: left;
+}
+
+.member-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.member-input {
+    border: none;
+    width: 50px;
+    font-size: medium;
+    text-align: right;
+}
+
+.member-percentage {
+    font-weight: 900;
+    font-size: medium;
+}
+
+.subject-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subject-label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    font-weight: 600;
+}
+
+.subject-input {
+    min-height: 30px;
+    border: none;
+    font-size: medium;
+    border-radius: 5px;
+    background-color: #d6e6e6;
+}
+
+.form-submit {
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #d6e6e6;
+    font-size: medium;
+    font-weight: 600;
+    border: none;
+    color: #123553;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-submit:hover {
+    background-color: #123553;
+    color: #d6e6e6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px #123553;
+  }
+  
+  .form-submit.disabled-button {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .form-submit.disabled-button:hover {
+    background-color: #cccccc;
+    color: #666666;
+    transform: none;
+    box-shadow: none;
+  }
+  
+
+.error {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    color: var(--danger);
+    font-size: small;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .expense-section {
+        width: 340px;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .close-button {
+        left: 220px;
+        top: -430px;
+    }
+
+    .payer-input-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .amount-input-group {
+        justify-content: end;
+    }
+}
+
+@media (max-width: 390px) {
+    .expense-section {
+        width: 280px;
+    }
+
+    .close-button {
+        left: 170px;
+        top: -430px;
+    }
+}

@@ -1,0 +1,150 @@
+@PORT = 3000
+@HOST = http://localhost:{{PORT}}
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0NTc2Mjg4NH0.m5f5C4hsDFo5xgnIS6umTzXz3IAYjtwa6G0PL5U7kO4
+
+## Registro de un nuevo usuario con ID de grupo
+POST {{HOST}}/api/usuarios/register
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "name": "Usuario Nuevo",
+  "lastname": "Apellido Nuevo",
+  "email": "nuevo@example.com",
+  "photo": "url_de_la_foto",
+  "password": "nuevapassword",
+  "groupId": 1,
+  "paymentPercentage": 20.00
+}
+
+
+
+## prueba
+POST{{HOST}}/api/usuarios/register
+Content-Type: application/json
+
+{
+  "name": "Usuario Nuevo",
+  "email": "nuevo@example.com",
+  "password": "nuevapassword"
+}
+
+## Actualización de un usuario con ID de grupo
+PUT {{HOST}}/api/usuarios/3
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "name": "Usuario Actualizado",
+  "lastname": "Apellido Actualizado",
+  "email": "actualizado@example.com",
+  "photo": "nueva_url_de_la_foto",
+  "password": "nuevapassword",  // Opcional, sólo si deseas cambiar la contraseña
+  "group_id": 2,
+  "payment_percentage": 25.00,
+  "debt": 50.00
+}
+
+##Obtener todos los usuarios (requiere token)
+GET {{HOST}}/api/usuarios
+Authorization: {{TOKEN}}
+
+
+### Iniciar sesión
+POST {{HOST}}/api/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "pato.cueva@example.com",
+  "password": "password123"
+}
+
+### OBTENER TODOS LOS USUARIOS
+GET {{HOST}}/api/usuarios
+Authorization: {{TOKEN}}
+
+### Obtener un usuario por ID
+GET {{HOST}}/api/usuarios/1
+Authorization: {{TOKEN}}
+
+### Actualizar un usuario
+PUT {{HOST}}/api/usuarios/3
+Content-Type: application/json
+
+{
+  "name": "Miguel Actualizado",
+  "lastname": "Eguiguren Actualizado",
+  "email": "miguel.eguiguren@example.com",
+  "photo": null,
+  "password": "nuevaPassword123"
+}
+
+### Eliminar un usuario
+DELETE {{HOST}}/api/usuarios/3
+Authorization: {{TOKEN}}
+
+-----------------------------------------------
+
+--------------------------------------------------------------
+### Crear un gasto
+POST {{HOST}}/api/gastos
+Content-Type: application/json
+
+{
+  "group_id": 1,
+  "amount": 100.00,
+  "description": "Compra de alimentos"
+}
+
+### Obtener todos los gastos
+GET {{HOST}}/api/gastos
+
+### Obtener un gasto por ID
+GET {{HOST}}/api/gastos/1
+
+### Actualizar un gasto
+PUT {{HOST}}/api/gastos/1
+Content-Type: application/json
+
+{
+  "group_id": 1,
+  "amount": 150.00,
+  "description": "Compra de alimentos y bebidas"
+}
+
+### Eliminar un gasto
+DELETE {{HOST}}/api/gastos/1
+
+------------------------------------------------------------------------
+
+### Crear un pago
+POST {{HOST}}/api/pagos
+Content-Type: application/json
+
+{
+  "expense_id": 1,
+  "user_id": 1,
+  "amount_paid": 50.00
+}
+
+### Obtener todos los pagos
+GET {{HOST}}/api/pagos
+
+### Obtener un pago por ID
+GET {{HOST}}/api/pagos/1
+
+### Actualizar un pago
+PUT {{HOST}}/api/pagos/1
+Content-Type: application/json
+
+{
+  "expense_id": 1,
+  "user_id": 1,
+  "amount_paid": 75.00
+}
+
+### Eliminar un pago
+DELETE {{HOST}}/api/pagos/1
+
+
+

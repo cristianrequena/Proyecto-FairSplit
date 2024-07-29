@@ -1,0 +1,41 @@
+@PORT = 3000
+@HOST = http://localhost:{{PORT}}
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0NTc2Mjg4NH0.m5f5C4hsDFo5xgnIS6umTzXz3IAYjtwa6G0PL5U7kO4
+
+### CREAR UN NUEVO PAGO
+POST {{HOST}}/api/pagos
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "expenseId": 1,
+  "userId": 1,
+  "amount": 50.25
+}
+
+### OBTENER TODOS LOS PAGOS
+GET {{HOST}}/api/pagos
+Authorization: {{TOKEN}}
+
+### OBTENER UN PAGO POR ID
+GET {{HOST}}/api/pagos/1
+Authorization: {{TOKEN}}
+
+### ACTUALIZAR UN PAGO
+PUT {{HOST}}/api/pagos/1
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "expenseId": 1,
+  "userId": 1,
+  "amount": 75.50
+}
+
+### ELIMINAR UN PAGO
+DELETE {{HOST}}/api/pagos/1
+Authorization: {{TOKEN}}
+
+### OBTENER PAGOS POR USUARIO
+GET {{HOST}}/api/pagos/usuario/1
+Authorization: {{TOKEN}}

@@ -1,0 +1,30 @@
+<body>
+    <section class="section-primary">
+        <div class="nav">
+            <img class="img-home" src="../../../assets/img/home-img1.jpeg" alt="">
+            <div class="slogan">
+                <span class="slogan-1">Crea un grupo</span>
+                <div class="slogan-2">
+                    <div class="slogan-3">
+                        <span>y no te lies con las cuentas</span>
+                    </div>
+                    <button class="btn-new-group" (click)="abrirPopup()">Crear</button>
+                </div>
+            </div>
+        </div>
+        <div class="list-groups">
+            @for(group of groups | paginate:{itemsPerPage:6, currentPage: page}; track group.group_id){
+            <app-mini-group [miGroup]="group"></app-mini-group>
+            }
+           
+        </div>
+       
+    </section>
+
+    <div class="popup-overlay" *ngIf="mostrarPopup">
+        <div class="popup-content">
+            <app-new-group (cerrar)="cerrarPopup()"></app-new-group>
+        </div>
+    </div>
+    <pagination-controls class="pagination" (pageChange)="page = $event" previousLabel="" nextLabel=""></pagination-controls>
+</body>

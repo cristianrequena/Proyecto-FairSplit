@@ -1,0 +1,10 @@
+<form class="form" id="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form_container">
+        <h2 class="form_tittle">Contáctame</h2>
+       <!-- <input type="text" class="form_input" id="name" [(ngModel)]="to" name="name" placeholder="Nombre"><br>-->
+        <input type="text" class="form_input" id="email" [(ngModel)]="to" name="email" placeholder="Email"><br>
+        <input type="text" class="form_input" id="subject" [(ngModel)]="subject" name="subject" placeholder="Asunto"><br>
+        <textarea id="message" class="form_input form-input--message" [(ngModel)]="text" name="message" placeholder="Mensaje"></textarea><br>
+        <input class="form_cta" type="submit" value="Enviar">
+    </div> 
+</form>

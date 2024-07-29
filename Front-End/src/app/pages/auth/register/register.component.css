@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: #ffffff;
+}
+
+.container {
+  margin: 50px;
+  width: 380px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container .title {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #89fcf4, #02d6d6);
+}
+
+.container form {
+  padding: 30px;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.field input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.field label {
+  position: absolute;
+  top: -25px; /* Ajuste la distancia del label al input */
+  left: 10px;
+  color: #00a2ff;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform-origin: left top;
+}
+
+.field label.active {
+  top: -15px; /* Ajuste para cuando el input está lleno */
+  left: 20px;
+  font-size: 14px; /* Tamaño del label cuando está arriba */
+  color: #037dff; /* Color del label cuando está arriba */
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.signup-link {
+  color: #262626;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #002aff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.blue-button {
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #037dff, #00fdfd);
+  transition: all 0.3s ease;
+}
+
+form .field input:focus {
+  background: rgba(214, 214, 214, 0.435);
+}
+
+.gray-button {
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: not-allowed;
+  background: #cccccc; /* Cambia el color de fondo a gris */
+}
+
+.form-footer .field input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    margin: 20px;
+  }
+}

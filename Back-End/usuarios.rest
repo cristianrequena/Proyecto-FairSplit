@@ -1,0 +1,80 @@
+@PORT = 3000
+@HOST = http://localhost:{{PORT}}
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTcxODkxMTE5OCwiZXhwIjoxNzE4OTk3NTk4fQ.Ut9aKzX52Pq7JTzfjMJih7LEtaXvXORAdVesF8n5tDM
+
+### Registro de un nuevo usuario independiente
+POST {{HOST}}/api/usuarios/register
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "name": "Diego",
+  "lastname": "Ortiz",
+  "email": "diego.or@gmail.com",
+  "photo": "url_de_la_foto",
+  "password": "Usuario123"
+}
+
+### Login de Usuario
+POST {{HOST}}/api/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "nuevapassword"
+}
+
+### OBTENER TODOS LOS USUARIOS
+GET {{HOST}}/api/usuarios
+Authorization: Bearer {{TOKEN}}
+
+### Obtener un usuario por ID
+GET {{HOST}}/api/usuarios/25
+Authorization: Bearer {{TOKEN}}
+
+### Actualizar un usuario
+PUT {{HOST}}/api/usuarios/27
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "name": "Usuario Actualizado",
+  "lastname": "Apellido Actualizado",
+  "email": "vgomez@gmail.com",
+  "url_photo": "url_actualizada_de_la_foto",
+  "password": "1234567"
+}
+
+### Eliminar un usuario
+DELETE {{HOST}}/api/usuarios/1
+Authorization: Bearer {{TOKEN}}
+
+
+### Verificar contraseña de un usuario (requiere token)
+POST {{HOST}}/api/usuarios/verify-password
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "id": 25,
+  "password": "Usuario123"
+}
+
+
+### Solicitar restablecimiento de contraseña
+POST {{HOST}}/api/usuarios/request-password-reset
+Content-Type: application/json
+
+{
+  "email": "viictorluquem@gmail.com"
+}
+
+### Restablecer contraseña
+POST {{HOST}}/api/usuarios/reset-password
+Content-Type: application/json
+
+{
+  "token": "ab872d0bfda759c6160b1cedc653bce471d3e87bbe881f306ab1d3e4f0096c43",
+  "id": 25,
+  "newPassword": "Usuario123"
+}

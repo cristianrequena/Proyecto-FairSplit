@@ -1,0 +1,17 @@
+
+<body>
+    <div class="container">
+       <div class="title">
+          ¿Contraseña Olvidada?
+       </div>
+       <form [formGroup]="formRecover" (ngSubmit)="onSubmit()">
+          <div class="field">
+             <input type="email" id="emailRecover" formControlName="email" required>
+             <label for="emailRecover">Email Address</label>
+          </div>
+          <div class="field">
+             <input [disabled]="formRecover.invalid" type="submit" value="Restablecer Contraseña">
+          </div>
+       </form>
+    </div>
+ </body>

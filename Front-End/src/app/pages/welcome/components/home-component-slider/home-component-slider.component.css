@@ -1,0 +1,86 @@
+.banner {
+    background-image: url('../../../../../assets/banner-home/banner-desktop.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+    flex-direction: column;
+
+}
+
+.banner-content {
+    width: 50%;
+    text-align: center;
+    color: black !important;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+}
+
+.banner-content h1 {
+    color: black !important;
+}
+
+.banner-img {
+    display: flex;
+    width: 50%;
+
+}
+
+span {
+    display: flex;
+}
+
+span::after {
+    content: "|";
+    display: block;
+}
+
+.register {
+    background-color: var(--primary);
+    color: white;
+}
+
+.nav-li {
+    margin-bottom: 50px;
+}
+
+.banner-content .palabras {
+    justify-content: center;
+}
+
+
+.banner-content,
+.banner-img {
+    width: 100%;
+}
+
+
+
+@media only screen and (min-width: 1025px) {
+
+    .banner {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .banner-content {
+        width: 50%;
+        margin: auto;
+        padding: 30px;
+        text-align: left;
+    }
+
+    .banner-content .palabras {
+        justify-content: flex-start;
+    }
+
+
+    .banner-img-movil {
+        display: none;
+    }
+}
